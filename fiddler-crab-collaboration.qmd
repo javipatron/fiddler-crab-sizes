@@ -5,16 +5,30 @@ editor: visual
 execute: 
   echo: false
   message: false
+  warning: false
 ---
 
 ```{r}
 library(lterdatasampler)
 library(tidyverse)
 library(kableExtra)
+library(skimr)
 
 ```
 
-Read
+# Introduction
+
+### **Fiddler crab body size in salt marshes from Florida to Massachusetts, USA at PIE and VCR LTER and NOAA NERR sites during summer 2016.**
+
+We collected \~30 male, adult Minuca pugnax from thirteen marshes from Florida to Massachusetts and measured their carapace width with calipers. Water and air temperature data were collected from monitoring programs (i.e., LTER, NERR sites), nearby weather stations, and ocean buoys for 2016.
+
+### Summary of the df
+
+```{r}
+skim(pie_crab)
+```
+
+Plot
 
 ```{r}
 
@@ -22,23 +36,39 @@ pie_crab <- lterdatasampler::pie_crab
 
 
 ggplot(pie_crab, aes(y = latitude, x = size)) +
-  geom_jitter() +
-  labs(caption = "Caption Space for clarity")
+  geom_jitter(aes(color = latitude)) +
+  scale_colour_gradient(low = "cyan4", high = "darkorchid3") +
+  labs(caption = "https://doi.org/10.6073/pasta/4c27d2e778d3325d3830a5142e3839bb",
+       title = "Crab Size variables",
+       subtitle = "Latitude vs. Size",
+       x = "Size (mm)",
+       y = "Latidude (Degrees °)")
 
 ```
 
-Table of mean sd and sample size
+### Table of mean sd and sample size
 
 ```{r}
-
 crab_df <- pie_crab |> 
   group_by(latitude, site) |> 
   summarize(mean_size = round(mean(size), 2), 
             sd_size = round(sd(size), 2),
             sample_size = n()) |> 
-  kable(col.names = c("Latitude", "Site", "Mean Size", "SD Size", "Sample Size"))
+
+  kable(align='ccccccc',
+        col.names = c("Latitude", "Site", "Mean Size", "SD Size", "Sample Size"),
+        add_header_above(c("Header" = 2))) |> 
+  kable_styling(bootstrap_options = "striped") |> 
+  column_spec(1,bold = TRUE, background = "gray80") |> 
+  add_header_above(c(" " = 2, "Seedling dimenstions" = 2))
 
 crab_df
-
-
 ```
+
+
+
+# Citations
+
+## Source
+
+Johnson, D. 2019. Fiddler crab body size in salt marshes from Florida to Massachusetts, USA at PIE and VCR LTER and NOAA NERR sites during summer 2016. ver 1. Environmental Data Initiative. <https://doi.org/10.6073/pasta/4c27d2e778d3325d3830a5142e3839bb>
