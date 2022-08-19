@@ -55,37 +55,628 @@ ul.task-list{list-style: none;}
 </header>
 
 <div class="cell">
-<div class="cell-output cell-output-stderr">
-<pre><code>── Attaching packages ─────────────────────────────────────── tidyverse 1.3.2 ──
-✔ ggplot2 3.3.6     ✔ purrr   0.3.4
-✔ tibble  3.1.8     ✔ dplyr   1.0.9
-✔ tidyr   1.2.0     ✔ stringr 1.4.0
-✔ readr   2.1.2     ✔ forcats 0.5.1
-── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
-✖ dplyr::filter() masks stats::filter()
-✖ dplyr::lag()    masks stats::lag()
 
-Attaching package: 'kableExtra'
-
-
-The following object is masked from 'package:dplyr':
-
-    group_rows</code></pre>
 </div>
-</div>
-<p>Read</p>
+<section id="introduction" class="level1">
+<h1>Introduction</h1>
+<section id="fiddler-crab-body-size-in-salt-marshes-from-florida-to-massachusetts-usa-at-pie-and-vcr-lter-and-noaa-nerr-sites-during-summer-2016." class="level3">
+<h3 class="anchored" data-anchor-id="fiddler-crab-body-size-in-salt-marshes-from-florida-to-massachusetts-usa-at-pie-and-vcr-lter-and-noaa-nerr-sites-during-summer-2016."><strong>Fiddler crab body size in salt marshes from Florida to Massachusetts, USA at PIE and VCR LTER and NOAA NERR sites during summer 2016.</strong></h3>
+<p>We collected ~30 male, adult Minuca pugnax from thirteen marshes from Florida to Massachusetts and measured their carapace width with calipers. Water and air temperature data were collected from monitoring programs (i.e., LTER, NERR sites), nearby weather stations, and ocean buoys for 2016.</p>
+</section>
+<section id="summary-of-the-df" class="level3">
+<h3 class="anchored" data-anchor-id="summary-of-the-df">Summary of the df</h3>
 <div class="cell">
 <div class="cell-output-display">
-<p><img src="fiddler-crab-collaboration_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid" width="672"></p>
+
+<table style="width: auto;" class="table table-condensed">
+<caption>
+Data summary
+</caption>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Name
+</td>
+<td style="text-align:left;">
+pie_crab
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Number of rows
+</td>
+<td style="text-align:left;">
+392
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Number of columns
+</td>
+<td style="text-align:left;">
+9
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+_______________________
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Column type frequency:
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+character
+</td>
+<td style="text-align:left;">
+2
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Date
+</td>
+<td style="text-align:left;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:left;">
+6
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+________________________
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Group variables
+</td>
+<td style="text-align:left;">
+None
+</td>
+</tr>
+</tbody>
+
+</table>
+<p><strong>Variable type: character</strong></p>
+
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">
+skim_variable
+</th>
+<th style="text-align:right;">
+n_missing
+</th>
+<th style="text-align:right;">
+complete_rate
+</th>
+<th style="text-align:right;">
+min
+</th>
+<th style="text-align:right;">
+max
+</th>
+<th style="text-align:right;">
+empty
+</th>
+<th style="text-align:right;">
+n_unique
+</th>
+<th style="text-align:right;">
+whitespace
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+site
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+13
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+name
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+8
+</td>
+<td style="text-align:right;">
+32
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+13
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+</tbody>
+
+</table>
+<p><strong>Variable type: Date</strong></p>
+
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">
+skim_variable
+</th>
+<th style="text-align:right;">
+n_missing
+</th>
+<th style="text-align:right;">
+complete_rate
+</th>
+<th style="text-align:left;">
+min
+</th>
+<th style="text-align:left;">
+max
+</th>
+<th style="text-align:left;">
+median
+</th>
+<th style="text-align:right;">
+n_unique
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+date
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+2016-07-24
+</td>
+<td style="text-align:left;">
+2016-08-13
+</td>
+<td style="text-align:left;">
+2016-08-01
+</td>
+<td style="text-align:right;">
+11
+</td>
+</tr>
+</tbody>
+
+</table>
+<p><strong>Variable type: numeric</strong></p>
+
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">
+skim_variable
+</th>
+<th style="text-align:right;">
+n_missing
+</th>
+<th style="text-align:right;">
+complete_rate
+</th>
+<th style="text-align:right;">
+mean
+</th>
+<th style="text-align:right;">
+sd
+</th>
+<th style="text-align:right;">
+p0
+</th>
+<th style="text-align:right;">
+p25
+</th>
+<th style="text-align:right;">
+p50
+</th>
+<th style="text-align:right;">
+p75
+</th>
+<th style="text-align:right;">
+p100
+</th>
+<th style="text-align:left;">
+hist
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+latitude
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+37.69
+</td>
+<td style="text-align:right;">
+4.26
+</td>
+<td style="text-align:right;">
+30.00
+</td>
+<td style="text-align:right;">
+34.00
+</td>
+<td style="text-align:right;">
+39.10
+</td>
+<td style="text-align:right;">
+41.60
+</td>
+<td style="text-align:right;">
+42.70
+</td>
+<td style="text-align:left;">
+▃▅▂▃▇
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+size
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+14.66
+</td>
+<td style="text-align:right;">
+3.50
+</td>
+<td style="text-align:right;">
+6.64
+</td>
+<td style="text-align:right;">
+12.02
+</td>
+<td style="text-align:right;">
+14.44
+</td>
+<td style="text-align:right;">
+17.34
+</td>
+<td style="text-align:right;">
+23.43
+</td>
+<td style="text-align:left;">
+▂▇▇▆▂
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+air_temp
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+15.20
+</td>
+<td style="text-align:right;">
+3.79
+</td>
+<td style="text-align:right;">
+10.29
+</td>
+<td style="text-align:right;">
+12.05
+</td>
+<td style="text-align:right;">
+13.93
+</td>
+<td style="text-align:right;">
+18.63
+</td>
+<td style="text-align:right;">
+21.79
+</td>
+<td style="text-align:left;">
+▇▃▂▅▃
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+air_temp_sd
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+8.65
+</td>
+<td style="text-align:right;">
+0.98
+</td>
+<td style="text-align:right;">
+6.39
+</td>
+<td style="text-align:right;">
+8.11
+</td>
+<td style="text-align:right;">
+8.41
+</td>
+<td style="text-align:right;">
+9.48
+</td>
+<td style="text-align:right;">
+9.96
+</td>
+<td style="text-align:left;">
+▂▂▇▂▇
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+water_temp
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+17.65
+</td>
+<td style="text-align:right;">
+3.44
+</td>
+<td style="text-align:right;">
+13.98
+</td>
+<td style="text-align:right;">
+14.33
+</td>
+<td style="text-align:right;">
+17.50
+</td>
+<td style="text-align:right;">
+20.54
+</td>
+<td style="text-align:right;">
+24.50
+</td>
+<td style="text-align:left;">
+▇▂▂▃▁
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+water_temp_sd
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+7.25
+</td>
+<td style="text-align:right;">
+1.13
+</td>
+<td style="text-align:right;">
+4.84
+</td>
+<td style="text-align:right;">
+6.57
+</td>
+<td style="text-align:right;">
+7.00
+</td>
+<td style="text-align:right;">
+7.86
+</td>
+<td style="text-align:right;">
+9.12
+</td>
+<td style="text-align:left;">
+▂▃▇▃▅
+</td>
+</tr>
+</tbody>
+
+</table>
 </div>
 </div>
-<p>Table of mean sd and sample size</p>
+<p>Plot</p>
 <div class="cell">
-<div class="cell-output cell-output-stderr">
-<pre><code>`summarise()` has grouped output by 'latitude'. You can override using the
-`.groups` argument.</code></pre>
+<div class="cell-output-display">
+<p><img src="fiddler-crab-collaboration_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
+</section>
+<section id="table-of-mean-sd-and-sample-size" class="level3">
+<h3 class="anchored" data-anchor-id="table-of-mean-sd-and-sample-size">Table of mean sd and sample size</h3>
+<div class="cell">
+<div class="cell-output-display">
+<table class="table table-sm table-striped">
+<thead>
+<tr class="header">
+<th style="text-align: center;">Latitude</th>
+<th style="text-align: center;">Site</th>
+<th style="text-align: center;">Mean Size</th>
+<th style="text-align: center;">SD Size</th>
+<th style="text-align: center;">Sample Size</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">30.0</td>
+<td style="text-align: center;">GTM</td>
+<td style="text-align: center;">12.40</td>
+<td style="text-align: center;">1.80</td>
+<td style="text-align: center;">28</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">31.4</td>
+<td style="text-align: center;">SI</td>
+<td style="text-align: center;">9.85</td>
+<td style="text-align: center;">1.79</td>
+<td style="text-align: center;">30</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">33.3</td>
+<td style="text-align: center;">NIB</td>
+<td style="text-align: center;">13.29</td>
+<td style="text-align: center;">2.42</td>
+<td style="text-align: center;">30</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">34.0</td>
+<td style="text-align: center;">ZI</td>
+<td style="text-align: center;">12.06</td>
+<td style="text-align: center;">2.01</td>
+<td style="text-align: center;">35</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">34.7</td>
+<td style="text-align: center;">RC</td>
+<td style="text-align: center;">12.49</td>
+<td style="text-align: center;">2.34</td>
+<td style="text-align: center;">25</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">37.2</td>
+<td style="text-align: center;">VCR</td>
+<td style="text-align: center;">16.34</td>
+<td style="text-align: center;">2.94</td>
+<td style="text-align: center;">30</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">39.1</td>
+<td style="text-align: center;">DB</td>
+<td style="text-align: center;">15.60</td>
+<td style="text-align: center;">2.12</td>
+<td style="text-align: center;">30</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">39.6</td>
+<td style="text-align: center;">JC</td>
+<td style="text-align: center;">15.27</td>
+<td style="text-align: center;">2.72</td>
+<td style="text-align: center;">30</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">41.3</td>
+<td style="text-align: center;">CT</td>
+<td style="text-align: center;">14.69</td>
+<td style="text-align: center;">2.36</td>
+<td style="text-align: center;">33</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">41.6</td>
+<td style="text-align: center;">NB</td>
+<td style="text-align: center;">17.14</td>
+<td style="text-align: center;">2.29</td>
+<td style="text-align: center;">29</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">41.9</td>
+<td style="text-align: center;">CC</td>
+<td style="text-align: center;">16.82</td>
+<td style="text-align: center;">2.05</td>
+<td style="text-align: center;">27</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">42.2</td>
+<td style="text-align: center;">BC</td>
+<td style="text-align: center;">16.20</td>
+<td style="text-align: center;">4.81</td>
+<td style="text-align: center;">37</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">42.7</td>
+<td style="text-align: center;">PIE</td>
+<td style="text-align: center;">18.50</td>
+<td style="text-align: center;">2.30</td>
+<td style="text-align: center;">28</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+</section>
+<section id="citations" class="level1">
+<h1>Citations</h1>
+<section id="source" class="level2">
+<h2 class="anchored" data-anchor-id="source">Source</h2>
+<p>Johnson, D. 2019. Fiddler crab body size in salt marshes from Florida to Massachusetts, USA at PIE and VCR LTER and NOAA NERR sites during summer 2016. ver 1. Environmental Data Initiative. <a href="https://doi.org/10.6073/pasta/4c27d2e778d3325d3830a5142e3839bb" class="uri">https://doi.org/10.6073/pasta/4c27d2e778d3325d3830a5142e3839bb</a></p>
+</section>
+</section>
 
 </main>
 <!-- /main column -->
