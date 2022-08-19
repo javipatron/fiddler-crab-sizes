@@ -54,6 +54,7 @@ crab_df <- pie_crab |>
   summarize(mean_size = round(mean(size), 2), 
             sd_size = round(sd(size), 2),
             sample_size = n()) |> 
+
   kable(align='ccccccc',
         col.names = c("Latitude", "Site", "Mean Size", "SD Size", "Sample Size"),
         add_header_above(c("Header" = 2))) |> 
@@ -63,6 +64,8 @@ crab_df <- pie_crab |>
 
 crab_df
 ```
+
+
 
 # Citations
 
