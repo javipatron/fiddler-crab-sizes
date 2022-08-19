@@ -6,12 +6,18 @@ editor: visual
 
 ```{r}
 library(lterdatasampler)
-
+library(tidyverse)
 
 ```
 
 Read
 
 ```{r}
+
+pie_crab <- lterdatasampler::pie_crab
+
+
+ggplot(pie_crab, aes(y = latitude, x = size)) +
+  geom_jitter()
 
 ```
