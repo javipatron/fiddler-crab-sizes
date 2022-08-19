@@ -35,9 +35,10 @@ crab_df <- pie_crab |>
   group_by(latitude, site) |> 
   summarize(mean_size = round(mean(size), 2), 
             sd_size = round(sd(size), 2),
-            sample_size = n())
-  
+            sample_size = n()) |> 
+  kable(col.names = c("Latitude", "Site", "Mean Size", "SD Size", "Sample Size"))
 
+crab_df
 
 
 ```
